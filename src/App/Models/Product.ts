@@ -1,4 +1,4 @@
-import { model,Schema} from "mongoose";
+import mongoose, { model,Schema} from "mongoose";
 
 export const Product = model('Product',new Schema({
   name:{
@@ -29,7 +29,7 @@ export const Product = model('Product',new Schema({
     },
   }
   ],
-  category:{
+  category: {
     type: Schema.Types.ObjectId,
     required:true,
     ref: 'Category'
