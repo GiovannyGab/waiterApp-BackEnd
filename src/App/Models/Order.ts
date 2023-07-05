@@ -3,7 +3,7 @@ import { model,Schema} from "mongoose";
 export const Order = model('Order',new Schema({
   table:{
     type:String,
-    required:[true,'Name is Required']
+    required:true
   },
   status:{
     type:String,

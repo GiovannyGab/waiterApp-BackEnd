@@ -4,7 +4,7 @@ export default async function listProducts(req:Request,res:Response){
   try {
     const products =  await Product.find()
 
-res.sendStatus(200).json({products})
+res.json(products)
   } catch (error) {
     console.log(error)
     res.sendStatus(500)

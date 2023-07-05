@@ -6,6 +6,8 @@ import listProducts from "./App/useCases/product/listProducts";
 import multer from 'multer'
 import createProduct from "./App/useCases/product/createProducts";
 import findProductsByCategory from "./App/useCases/categories/findProductsByCategory";
+import listOrders from "./App/useCases/order/listOder";
+import createOrder from "./App/useCases/order/createOrder";
 
 export const router = Router();
 
@@ -34,13 +36,9 @@ router.post('/products',upload.single('image'),createProduct)
 router.get('/categories/:categoryId/products',findProductsByCategory)
 
   // list Orders
-router.get('/order',(req,res)=>{
-  res.send("Ok")
-  })
+router.get('/orders',listOrders)
  // create Orders
- router.post('/orders',(req,res)=>{
-  res.send("Ok")
-  })
+ router.post('/orders',createOrder)
 
    // change order status
  router.patch('/orders/:orderId',(req,res)=>{
